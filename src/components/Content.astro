@@ -1,0 +1,93 @@
+---
+import { Image } from "astro:assets";
+import Bed_1 from "../assets/images/bed_1.jpeg";
+import Bed_2 from "../assets/images/bed_2.jpeg";
+import Bed_3 from "../assets/images/bed_3.jpeg";
+import Bed_4 from "../assets/images/bed_4.jpeg";
+import Bed_5 from "../assets/images/bed_5.jpeg";
+import Bed_6 from "../assets/images/bed_6.jpeg";
+---
+
+<section id="content">
+  <div class="mx-auto max-w-5xl space-y-12 px-6">
+    <div class="mx-auto max-w-2xl space-y-6 text-center md:space-y-12">
+      <h2 class="text-title text-5xl font-bold lg:text-6xl">
+        Matratzen für
+        <span
+          class="bg-gradient-to-b from-primary to-secondary bg-clip-text text-transparent"
+          >jeden Bedarf</span
+        >
+      </h2>
+      <p class="text-body text-xl">
+        Wir bieten Ihnen eine breite Palette an Matratzen in unterschiedlichen
+        Härtegraden und Größen. Vom Klassiker bis hin zu innovativen Modellen -
+        alle Matratzen zeichnen sich durch <span class="font-bold text-black"
+          >erstklassige Qualität und einen hohen Schlafkomfort</span
+        > aus. Ganz gleich, ob Sie eine Taschenfederkern-, Kaltschaum- oder Viscoschaum-Matratze
+        suchen, wir haben für jeden Schlaftyp und jedes Budget die passende Lösung.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+      <div class="h-48 overflow-hidden">
+        <Image
+          src={Bed_2}
+          alt="Alt Text dhidaihdaidhasidjhsaidjhasidhsa"
+          class="w-full h-full object-cover rounded-lg"
+        />
+      </div>
+      <div class="h-48 overflow-hidden">
+        <Image
+          src={Bed_3}
+          alt="Alt Text dhidaihdaidhasidjhsaidjhasidhsa"
+          class="w-full h-full object-cover rounded-lg"
+        />
+      </div>
+      <div class="h-48 overflow-hidden">
+        <Image
+          src={Bed_4}
+          alt="Alt Text dhidaihdaidhasidjhsaidjhasidhsa"
+          class="w-full h-full object-cover rounded-lg"
+        />
+      </div>
+      <div class="h-48 overflow-hidden">
+        <Image
+          src={Bed_6}
+          alt="Alt Text dhidaihdaidhasidjhsaidjhasidhsa"
+          class="w-full h-full object-cover rounded-lg"
+        />
+      </div>
+      <div class="h-48 overflow-hidden">
+        <Image
+          src={Bed_1}
+          alt="Alt Text dhidaihdaidhasidjhsaidjhasidhsa"
+          class="w-full h-full object-cover rounded-lg"
+        />
+      </div>
+      <div class="h-48 overflow-hidden">
+        <Image
+          src={Bed_5}
+          alt="Alt Text dhidaihdaidhasidjhsaidjhasidhsa"
+          class="w-full h-full object-cover rounded-lg"
+        />
+      </div>
+    </div>
+    <div class="mx-auto max-w-2xl space-y-6 text-center md:space-y-12">
+      <h2 class="text-title text-5xl font-bold lg:text-6xl">
+        Bettwaren für ein
+        <span
+          class="bg-gradient-to-b from-primary to-secondary bg-clip-text text-transparent"
+          >rundum perfektes Schlafgefühl</span
+        >
+      </h2>
+      <p class="text-body text-xl">
+        Neben Matratzen finden Sie in unserem Outlet auch eine große Auswahl an
+        Bettwaren: von Kopfkissen über Bettdecken bis hin zu Toppern und
+        Matratzenschonern. Mit unseren Produkten können Sie Ihre Schlafumgebung
+        perfekt ergänzen und <span class="font-bold text-black"
+          >noch komfortabler machen.</span
+        >
+      </p>
+    </div>
+  </div>
+</section>
