@@ -1,1 +1,36 @@
-<h2>Hier kommt noch eine Kontakt Sektion</h2>
+---
+import { isInputError } from "astro:actions";
+import { actions } from "astro:actions";
+
+const result = Astro.getActionResult(actions.send);
+
+// if (result?.data) {
+//   return Astro.redirect("/");
+// }
+
+const inputErrors = isInputError(result?.error) ? result.error.fields : {};
+---
+
+<form action={actions.send} method="post">
+  <label
+    >name<input
+      type="text"
+      name="name"
+      placeholder="name"
+      required
+      aria-describedby={inputErrors.name ? "name-error" : undefined}
+    />
+  </label>
+  {inputErrors.name && <p id="name-error">{inputErrors.name[0]}</p>}
+  <label
+    >Email<input
+      type="email"
+      name="email"
+      placeholder="Email"
+      required
+      aria-describedby={inputErrors.email ? "email-error" : undefined}
+    />
+  </label>
+  {inputErrors.email && <p id="email-error">{inputErrors.email[0]}</p>}
+  <button>Send</button>
+</form>
