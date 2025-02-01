@@ -54,7 +54,7 @@ export const SampleEmail = ({ name, message }: SampleEmailProps) => (
         </Section>
 
         <Text style={footer}>
-          Matratzen-Outlet Duisburg Ruhrorterstr. 58 in 47059 Duisburg
+          Matratzen-Outlet Duisburg | Ruhrorterstr. 58 in 47059 Duisburg
         </Text>
       </Container>
     </Body>
