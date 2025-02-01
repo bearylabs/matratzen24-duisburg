@@ -9,13 +9,60 @@ import Footer from "../components/Footer.astro";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
+
+    <title>
+      Matratzen Outlet Duisburg – Günstige Matratzen & Schlafkomfort
+    </title>
     <meta
       name="description"
-      content="Template built with tailwindcss using Tailus blocks v2"
+      content="Besuchen Sie das Matratzen Outlet Duisburg! Günstige Matratzen, Boxspringbetten & Lattenroste direkt vor Ort. ✓ Große Auswahl ✓ Persönliche Beratung ✓ Jetzt entdecken!"
     />
-    <title>Matratzen-Outlet Duisburg</title>
+
+    <meta
+      name="keywords"
+      content="Matratzen Duisburg, Matratzen Outlet, Boxspringbett Duisburg, Lattenroste, Schlafkomfort, günstige Matratzen kaufen"
+    />
+    <meta name="author" content="Matratzen Outlet Duisburg" />
+
+    <!-- Open Graph (Facebook, WhatsApp, etc.) -->
+    <meta
+      property="og:title"
+      content="Matratzen Outlet Duisburg – Große Auswahl & günstige Preise"
+    />
+    <meta
+      property="og:description"
+      content="Ihr Spezialist für günstige Matratzen, Boxspringbetten & Lattenroste in Duisburg. Jetzt entdecken & besser schlafen!"
+    />
+    <meta
+      property="og:image"
+      content="https://matratzen24-duisburg.de/_image?href=%2F_astro%2Fbed_1.BIptQYBD.jpeg&w=5475&h=3658&f=webp"
+    />
+    <meta property="og:url" content="https://matratzen24-duisburg.de/" />
+    <meta property="og:type" content="website" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Lokales Geschäft (Google Local SEO) -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "FurnitureStore",
+        "name": "Matratzen Outlet Duisburg",
+        "image": "https://matratzen24-duisburg.de/_image?href=%2F_astro%2Fbed_1.BIptQYBD.jpeg&w=5475&h=3658&f=webp",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ruhrorterstr. 58",
+          "addressLocality": "Duisburg",
+          "postalCode": "47059",
+          "addressCountry": "DE"
+        },
+        "telephone": "+49 2842 1219855",
+        "url": "https://matratzen24-duisburg.de/",
+        "openingHours": "Mo-Sa 12:00-19:00"
+      }
+    </script>
   </head>
   <body class="bg-white dark:bg-gray-900">
     <Header />
