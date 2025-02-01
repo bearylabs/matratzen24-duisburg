@@ -22,7 +22,7 @@ const inputErrors = isInputError(result?.error) ? result.error.fields : {};
       type="text"
       name="name"
       id="name"
-      placeholder="Dein Name"
+      placeholder="Ihr Name"
       required
       class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
       aria-describedby={inputErrors.name ? "name-error" : undefined}
@@ -44,7 +44,7 @@ const inputErrors = isInputError(result?.error) ? result.error.fields : {};
       type="email"
       name="email"
       id="email"
-      placeholder="Deine Email"
+      placeholder="Ihre Email"
       required
       class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
       aria-describedby={inputErrors.email ? "email-error" : undefined}
@@ -65,7 +65,7 @@ const inputErrors = isInputError(result?.error) ? result.error.fields : {};
     <textarea
       name="message"
       id="message"
-      placeholder="Schreibe hier deine Nachricht"
+      placeholder="Schreiben Sie hier Ihre Nachricht"
       rows="4"
       class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
     ></textarea>
