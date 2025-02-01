@@ -4,33 +4,77 @@ import { actions } from "astro:actions";
 
 const result = Astro.getActionResult(actions.send);
 
-// if (result?.data) {
-//   return Astro.redirect("/");
-// }
-
 const inputErrors = isInputError(result?.error) ? result.error.fields : {};
 ---
 
-<form action={actions.send} method="post">
-  <label
-    >name<input
+<form
+  action={actions.send}
+  method="post"
+  class="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg"
+>
+  <h2 class="text-2xl font-semibold mb-6 text-center">Kontaktformular</h2>
+
+  <div class="mb-4">
+    <label for="name" class="block text-lg font-medium text-gray-700"
+      >Name</label
+    >
+    <input
       type="text"
       name="name"
-      placeholder="name"
+      id="name"
+      placeholder="Dein Name"
       required
+      class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
       aria-describedby={inputErrors.name ? "name-error" : undefined}
     />
-  </label>
-  {inputErrors.name && <p id="name-error">{inputErrors.name[0]}</p>}
-  <label
-    >Email<input
+    {
+      inputErrors.name && (
+        <p id="name-error" class="text-red-500 text-sm">
+          {inputErrors.name[0]}
+        </p>
+      )
+    }
+  </div>
+
+  <div class="mb-4">
+    <label for="email" class="block text-lg font-medium text-gray-700"
+      >Email</label
+    >
+    <input
       type="email"
       name="email"
-      placeholder="Email"
+      id="email"
+      placeholder="Deine Email"
       required
+      class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
       aria-describedby={inputErrors.email ? "email-error" : undefined}
     />
-  </label>
-  {inputErrors.email && <p id="email-error">{inputErrors.email[0]}</p>}
-  <button>Send</button>
+    {
+      inputErrors.email && (
+        <p id="email-error" class="text-red-500 text-sm">
+          {inputErrors.email[0]}
+        </p>
+      )
+    }
+  </div>
+
+  <div class="mb-6">
+    <label for="message" class="block text-lg font-medium text-gray-700"
+      >Nachricht</label
+    >
+    <textarea
+      name="message"
+      id="message"
+      placeholder="Schreibe hier deine Nachricht"
+      rows="4"
+      class="mt-1 p-3 w-full border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-500"
+    ></textarea>
+  </div>
+
+  <button
+    type="submit"
+    class="w-full py-3 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 focus:ring-2 focus:ring-blue-500"
+  >
+    Absenden
+  </button>
 </form>

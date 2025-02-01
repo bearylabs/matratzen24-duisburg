@@ -12,10 +12,11 @@ export const server = {
     input: z.object({
       name: z.string(),
       email: z.string().email(),
+      message: z.string().optional(),
     }),
-    handler: async ({ name, email }) => {
+    handler: async ({ name, email, message }) => {
       // create the email
-      const emailContent = SampleEmail({ name });
+      const emailContent = SampleEmail({ name, message });
       const html = await render(emailContent);
       const text = await render(emailContent, {
         plainText: true,
@@ -23,12 +24,15 @@ export const server = {
 
       // send an email
       const { data, error } = await resend.emails.send({
-        from: "Matratzen24 Duisburg <matratzen24-duisburg@resend.dev>",
+        from: "Matratzen24 Duisburg <noreply@matratzen24-duisburg.de>",
         to: [email],
-        subject: "It works!",
+        bcc: ["verkauf@lepur.de"],
+        subject: "Ihre Nachricht ist bei uns eingegangen",
         html,
         text,
       });
+
+      console.log(data);
 
       if (error) {
         throw error;

@@ -13,45 +13,48 @@ import {
 
 interface SampleEmailProps {
   name?: string;
+  message?: string;
 }
 
-const baseUrl = "https://demo.react.email/";
+const baseUrl = "https://matratzen24-duisburg.de/";
 
-export const SampleEmail = ({ name }: SampleEmailProps) => (
+export const SampleEmail = ({ name, message }: SampleEmailProps) => (
   <Html>
     <Head />
-    <Preview>
-      A fine-grained personal access token has been added to your account
-    </Preview>
+    <Preview>Vielen dank für ihre Nachticht.</Preview>
     <Body style={main}>
       <Container style={container}>
         <Img
-          src={`${baseUrl}/static/github.png`}
-          width="32"
-          height="32"
-          alt="Github"
+          src="https://matratzen24-duisburg.de/_astro/logo.cpSArh2A_Z1j8hsk.webp"
+          width="64"
+          // height="32"
+          alt="Matratzen-Outlet Duisburg Logo"
         />
 
-        <Text style={title}>Neuer Eintrag im Kontaktformular</Text>
+        <Text style={title}>
+          Vielen Dank für ihre Nachticht, <strong>{name}</strong>.
+        </Text>
 
         <Section style={section}>
           <Text style={text}>
-            Hey <strong>{name}</strong>!
+            Hallo <strong>{name}</strong>,
           </Text>
           <Text style={text}>
-            A fine-grained personal access token (<Link>resend</Link>) was
-            recently added to your account.
+            Ihre Nachricht ist bei uns eingegangen und ein Mitarbeiter wird sich
+            so schnell wie möglich bei Ihnen melden.
           </Text>
-
-          <Button style={button}>View your token</Button>
+          {/* Nachricht aus dem Kontaktformular anzeigen */}
+          {message && (
+            <Text style={messageStyle}>
+              <strong>Ihre Nachricht:</strong>
+              <br />
+              {message}
+            </Text>
+          )}
         </Section>
-        <Text style={links}>
-          <Link style={link}>Your security audit log</Link> ・{" "}
-          <Link style={link}>Contact support</Link>
-        </Text>
 
         <Text style={footer}>
-          GitHub, Inc. ・88 Colin P Kelly Jr Street ・San Francisco, CA 94107
+          Matratzen-Outlet Duisburg Ruhrorterstr. 58 in 47059 Duisburg
         </Text>
       </Container>
     </Body>
@@ -60,6 +63,7 @@ export const SampleEmail = ({ name }: SampleEmailProps) => (
 
 SampleEmail.PreviewProps = {
   name: "alanturing",
+  message: "Ich interessiere mich für eine Matratze in Größe 140x200 cm.",
 } as SampleEmailProps;
 
 export default SampleEmail;
@@ -91,6 +95,16 @@ const section = {
 
 const text = {
   margin: "0 0 10px 0",
+  textAlign: "left" as const,
+};
+
+const messageStyle = {
+  marginTop: "16px",
+  padding: "12px",
+  backgroundColor: "#f8f9fa",
+  borderRadius: "5px",
+  border: "1px solid #dedede",
+  fontStyle: "italic",
   textAlign: "left" as const,
 };
 
